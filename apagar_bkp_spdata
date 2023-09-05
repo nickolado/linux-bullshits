@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Este comando é para apagar os arquivos com mais de 7 dias.
+
+# Configurações
+
+DIRETORIO="/home/dados/work/spdata/backup/zipdata"
+
+# Excluir backups antigos 
+find "${DIRETORIO}" -name "sghdados.gbk-*.zip" -type f -mtime +7 -exec rm {} \;
+find "${DIRETORIO}" -name "sghimagens.gbk-*.zip" -type f -mtime +7 -exec rm {} \;
+find "${DIRETORIO}" -name "sghlog.gbk-*.zip" -type f -mtime +7 -exec rm {} \;
+
+
