@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Este comando é para apagar os arquivos com mais de 7 dias.
+# Script criado para apagar arquivos de backup do banco de dados do SGH com mais de 7 dias de armazenamento. 
 
 # Configurações
 
