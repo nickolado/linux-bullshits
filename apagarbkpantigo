@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SCRIPT PARA APAGAR ARQUIVOS REFERENTES AO SISTEMA GLPI COM MAIS DE 7 DIAS DE ARMAZENAMENTO
+# DIRETORIO INDICA O CAMINHO DO ARQUIVO DE BACKUP DO BANCO DE DADOS
+# CAMINHO INDICA O CAMINHO DO ARQUIVO DE BACKUP DO DIRETORIO DO GLPI
+
 # Configurações
 
 DIRETORIO="/home/dados/work/spdata/backup/glpi/db"
@@ -12,7 +16,7 @@ find "${CAMINHO}" -name "glpi_dir_backup_*.tar.gz" -type f -mtime +7 -exec rm {}
 
 echo "feito"
 
-# SCRIPT FEITO POR DANIEL RICHARD
+
 
 
 
