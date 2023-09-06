@@ -1,0 +1,17 @@
+#!/bin/bash
+rm -f /home/dados/work/spdata/backup/gbk/sghdados.txt
+rm -f /home/dados/work/spdata/backup/gbk/sghdados.gbk
+rm -f /home/dados/work/spdata/backup/gbk/sghlog.txt
+rm -f /home/dados/work/spdata/backup/gbk/sghlog.gbk
+rm -f /home/dados/work/spdata/backup/gbk/sghimagens.txt
+rm -f /home/dados/work/spdata/backup/gbk/sghimagens.gbk
+/opt/firebird/bin/./gbak -b -v -g -l -user SYSDBA -password masterkey -se localhost:service_mgr /home/dados/work/banco/sghdados.1978 /home/dados/work/spdata/backup/gbk/sghdados.gbk > /home/dados/work/spdata/backup/gbk/sghdados.txt
+/opt/firebird/bin/./gbak -b -v -g -l -user SYSDBA -password masterkey -se localhost:service_mgr /home/dados/work/banco/sghlog.gdb /home/dados/work/spdata/backup/gbk/sghlog.gbk > /home/dados/work/spdata/backup/gbk/sghlog.txt
+/opt/firebird/bin/./gbak -b -v -g -l -user SYSDBA -password masterkey -se localhost:service_mgr /home/dados/work/banco/sghimagens.gdb /home/dados/work/spdata/backup/gbk/sghimagens.gbk > /home/dados/work/spdata/backup/gbk/sghimagens.txt
+chmod 777 /home/dados/work/spdata/backup/gbk/sghdados.txt
+chmod 777 /home/dados/work/spdata/backup/gbk/sghdados.gbk
+chmod 777 /home/dados/work/spdata/backup/gbk/sghlog.txt
+chmod 777 /home/dados/work/spdata/backup/gbk/sghlog.gbk
+chmod 777 /home/dados/work/spdata/backup/gbk/sghimagens.txt
+chmod 777 /home/dados/work/spdata/backup/gbk/sghimagens.gbk
+/usr/bin/./zipdata

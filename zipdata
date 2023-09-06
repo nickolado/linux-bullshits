@@ -1,0 +1,15 @@
+DATA=`date +%Y-%m-%d-%H.%M`
+cd /home/dados/work/spdata/backup/gbk
+zip sghdados.gbk-"$DATA".zip sghdados.gbk
+zip sghlog.gbk-"$DATA".zip sghlog.gbk
+zip sghimagens.gbk-"$DATA".zip sghimagens.gbk
+chmod 777 *.zip
+cd /home/dados/work/spdata/backup/zipdata
+rm *.zip
+cd /home/dados/work/spdata/backup/gbk
+mv *.zip /home/dados/work/spdata/backup/zipdata
+cd /home/dados/work/spdata/backup/zipdata
+scp *.zip richard@88.88.88.2:/home/dados/work/spdata/backup/zipdata
+scp *.zip daniel@99.99.99.2:/home/dados/backup/spdata
+
+
