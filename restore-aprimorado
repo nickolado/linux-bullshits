@@ -1,0 +1,20 @@
+#!/bin/bash
+
+backup_files=(
+    "/home/dados/work/bancoteste2/sghlog.gbk:/home/dados/work/bancoteste2/sghlog.gdb:sghlog.txt"
+    "/home/dados/work/bancoteste2/sghimagens.gbk:/home/dados/work/bancoteste2/sghimagens.gdb:sghimagens.txt"
+    "/home/dados/work/bancoteste2/sghdados.gbk:/home/dados/work/bancoteste2/sghdados_teste2.1978:sghdados_teste2.txt"
+)
+
+for backup_file in "${backup_files[@]}"; do
+    source_file="${backup_file%%:*}"
+    target_file="${backup_file%:*}"
+    target_file="${target_file#*:}"
+    log_file="${backup_file##*:}"
+    /opt/firebird/bin/gbak -c -v -p 8192 -se localhost:service_mgr -user SYSDBA -password masterkey "$source_file" "$target_file" > "$log_file" 2>&1
+done
+
+cd /home/dados/work/bancoteste2
+rm -rf *.gbk
+chmod 777 *
+
