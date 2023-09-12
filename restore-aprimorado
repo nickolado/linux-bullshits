@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# COMANDO PARA REALIZAÇÃO DE RESTORE DE BANCO DE DADOS (COM FIREBIRD) APRIMORADO COM MENOS REPETIÇÃO DE COMANDOS
+# FALTA AJUSTES
+# ATUALIZADO EM 12/09/2023
+
 backup_files=(
     "/home/dados/work/bancoteste2/sghlog.gbk:/home/dados/work/bancoteste2/sghlog.gdb:sghlog.txt"
     "/home/dados/work/bancoteste2/sghimagens.gbk:/home/dados/work/bancoteste2/sghimagens.gdb:sghimagens.txt"
